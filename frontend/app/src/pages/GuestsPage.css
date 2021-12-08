@@ -1,0 +1,8 @@
+.guest-page-form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.btn-submit {
+  width: 10rem;
+}

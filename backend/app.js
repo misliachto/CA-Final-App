@@ -25,3 +25,21 @@ mongoose
     app.listen(PORT, () => console.log(`Server is running on: ${PORT}`))
   })
   .catch((err) => console.log(err))
+
+// -- Routes
+app.get("/", (req, res) => res.send("API is working!"))
+
+// -- GET all movies
+app.get("/api/guests", (req, res) =>
+  Guest.find({}).then((data) => res.json(data))
+)
+
+// -- POST (adding guest)
+app.post("/api/guests", (req, res) => {
+  const guestsData = req.body
+  console.log(guestsData)
+
+  const guest = new Guest(guestsData)
+  guest.save()
+})
+// -- Need to add route for adding guests to a guest list
