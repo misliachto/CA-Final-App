@@ -29,7 +29,7 @@ mongoose
 // -- Routes
 app.get("/", (req, res) => res.send("API is working!"))
 
-// -- GET all movies
+// -- GET all guests
 app.get("/api/guests", (req, res) =>
   Guest.find({}).then((data) => res.json(data))
 )
