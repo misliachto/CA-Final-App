@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Button from "./Button"
 import axios from "axios"
 
-const Table = ({ data }) => {
+const Table = () => {
   const [guestList, setGuestList] = useState([])
 
   const getAllData = () => {
@@ -12,6 +12,12 @@ const Table = ({ data }) => {
     })
   }
 
+  const deleteGuest = (e) => {
+    const guestId = e.target.className
+    axios
+      .delete(`http://localhost:8000/api/guests/${guestId}`)
+      .then(() => console.log("Guest Deleted"))
+  }
   useEffect(() => {
     getAllData()
   })
@@ -36,8 +42,10 @@ const Table = ({ data }) => {
               <td>{guest.email}</td>
               <td>{guest.age}</td>
               <td>
-                <Button text="Delete" />
-                <Button text="Edit" />
+                <button className={guest._id} onClick={deleteGuest}>
+                  Delete
+                </button>
+                <button>Edit</button>
               </td>
             </tr>
           )
