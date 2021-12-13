@@ -8,23 +8,30 @@ const Form = () => {
   const [email, setEmail] = useState("")
   const [age, setAge] = useState("")
 
+  const [message, setMessage] = useState("")
+
   const submitGuestHandler = (e) => {
     e.preventDefault()
-    axios
-      .post("http://localhost:8000/api/guests", {
-        name: name.charAt(0).toUpperCase() + name.slice(1),
-        surname: surname.charAt(0).toUpperCase() + surname.slice(1),
-        email: email,
-        age: 2021 - age,
-      })
-      .then(
-        (response) => {
-          console.log(response.data)
-        },
-        (error) => {
-          console.log(error)
-        }
-      )
+    setMessage("")
+    if (name && surname && email && age) {
+      axios
+        .post("http://localhost:8000/api/guests", {
+          name: name.charAt(0).toUpperCase() + name.slice(1),
+          surname: surname.charAt(0).toUpperCase() + surname.slice(1),
+          email: email,
+          age: 2021 - age,
+        })
+        .then(
+          (response) => {
+            console.log(response.data)
+          },
+          (error) => {
+            console.log(error)
+          }
+        )
+    } else {
+      setMessage("Please make sure to fill in all the fields")
+    }
     setName("")
     setSurname("")
     setEmail("")
@@ -32,7 +39,7 @@ const Form = () => {
   }
 
   return (
-    <div>
+    <div className="guest-page-main__container">
       <form
         onSubmit={submitGuestHandler}
         className="guest-page-form__container"
@@ -73,8 +80,11 @@ const Form = () => {
             placeholder="Enter guests age"
           ></input>
         </label>
-        <input className="btn-submit" type="submit"></input>
+        <input className="btn-submit" type="submit" value="Add guest"></input>
       </form>
+      <div>
+        <h4>{message}</h4>
+      </div>
       <Table />
     </div>
   )

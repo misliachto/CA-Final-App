@@ -1,6 +1,24 @@
 .main-page__container {
+  height: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+.main-page-header__container h3 {
+  font-size: 2rem;
+}
+.main-page__container button {
+  background-color: goldenrod;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+}
+.main-page__container button:hover {
+  cursor: pointer;
+  background-color: rgb(216, 190, 123);
+  transition: 0.5s;
 }

@@ -20,7 +20,7 @@ const Table = () => {
 
   useEffect(() => {
     getAllData()
-  })
+  }, [guestList])
 
   const updateGuest = (e) => {
     const guestId = e.target.className
@@ -65,7 +65,7 @@ const Table = () => {
               <td contentEditable={true} suppressContentEditableWarning={true}>
                 {guest.age}
               </td>
-              <td>
+              <td className="guest-list-btn__container">
                 <button className={guest._id} onClick={deleteGuest}>
                   Delete
                 </button>

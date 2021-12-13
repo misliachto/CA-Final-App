@@ -4,7 +4,7 @@ import "./GuestsPage.css"
 
 const GuestsPage = () => {
   return (
-    <div>
+    <div className="guest-page__container">
       <h3>Guest Management Page</h3>
       <Form />
     </div>
