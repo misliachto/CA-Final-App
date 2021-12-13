@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import axios from "axios"
 import Table from "./Table"
 
@@ -12,10 +12,10 @@ const Form = () => {
     e.preventDefault()
     axios
       .post("http://localhost:8000/api/guests", {
-        name: name,
-        surname: surname,
+        name: name.charAt(0).toUpperCase() + name.slice(1),
+        surname: surname.charAt(0).toUpperCase() + surname.slice(1),
         email: email,
-        age: age,
+        age: 2021 - age,
       })
       .then(
         (response) => {

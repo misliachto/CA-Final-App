@@ -41,6 +41,15 @@ app.post("/api/guests", (req, res) => {
   const guest = new Guest(guestsData)
   guest.save()
 })
+// -- PUT(updating guest from a guests list)
+app.put("/api/guests/:id", (req, res) => {
+  const guestId = req.params.id
+  const updatedGuestInformation = req.body
+
+  Guest.findByIdAndUpdate(guestId, updatedGuestInformation)
+    .then((result) => console.log("Guest was updated"))
+    .catch((error) => console.log("Guest was not updated"))
+})
 // -- DELETE (deleting guest from the guests list)
 app.delete("/api/guests/:id", (req, res) => {
   const guestId = req.params.id
