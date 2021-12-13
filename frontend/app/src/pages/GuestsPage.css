@@ -48,7 +48,6 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .guest-list-btn__container button {
@@ -57,9 +56,11 @@
   color: white;
   border: none;
   border-radius: 0.4rem;
+  width: 5rem;
 }
 .guest-list-btn__container button:hover {
   background-color: white;
+  box-shadow: 0.2px 0.2px 0.2px 0.2px black;
   color: black;
   transition: 0.5s;
   cursor: pointer;
@@ -77,4 +78,7 @@ td {
 .td-content:hover {
   background-color: rgb(150, 150, 150);
   transition: 0.5s;
+}
+.ed-wrapper {
+  width: 15rem;
 }

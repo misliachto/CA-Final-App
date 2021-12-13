@@ -46,7 +46,7 @@ const Table = () => {
           <th>Surname</th>
           <th>Email</th>
           <th>Year of birth</th>
-          <th>Delete/Edit</th>
+          <th className="ed-wrapper">Delete/Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -85,7 +85,7 @@ const Table = () => {
               >
                 {guest.age}
               </td>
-              <td className="guest-list-btn__container">
+              <td className="guest-list-btn__container ed-wrapper">
                 <button className={guest._id} onClick={deleteGuest}>
                   Delete
                 </button>
