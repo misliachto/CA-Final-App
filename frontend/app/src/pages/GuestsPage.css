@@ -74,3 +74,7 @@ td {
   background-color: rgb(223, 224, 214);
   border-radius: 4px;
 }
+.td-content:hover {
+  background-color: rgb(150, 150, 150);
+  transition: 0.5s;
+}

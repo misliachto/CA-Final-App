@@ -18,10 +18,6 @@ const Table = () => {
       .then(() => console.log("Guest Deleted"))
   }
 
-  useEffect(() => {
-    getAllData()
-  }, [guestList])
-
   const updateGuest = (e) => {
     const guestId = e.target.className
     const trElements = document.querySelectorAll("tr")
@@ -38,6 +34,10 @@ const Table = () => {
     })
   }
 
+  useEffect(() => {
+    getAllData()
+  })
+
   return (
     <table className="guest-list__container">
       <thead>
@@ -52,17 +52,37 @@ const Table = () => {
       <tbody>
         {guestList.map((guest) => {
           return (
-            <tr id={guest._id} key={guest._id}>
-              <td contentEditable={true} suppressContentEditableWarning={true}>
+            <tr
+              className="guest-table-content__container"
+              id={guest._id}
+              key={guest._id}
+            >
+              <td
+                className="td-content"
+                contentEditable={true}
+                suppressContentEditableWarning={true}
+              >
                 {guest.name}
               </td>
-              <td contentEditable={true} suppressContentEditableWarning={true}>
+              <td
+                className="td-content"
+                contentEditable={true}
+                suppressContentEditableWarning={true}
+              >
                 {guest.surname}
               </td>
-              <td contentEditable={true} suppressContentEditableWarning={true}>
+              <td
+                className="td-content"
+                contentEditable={true}
+                suppressContentEditableWarning={true}
+              >
                 {guest.email}
               </td>
-              <td contentEditable={true} suppressContentEditableWarning={true}>
+              <td
+                className="td-content"
+                contentEditable={true}
+                suppressContentEditableWarning={true}
+              >
                 {guest.age}
               </td>
               <td className="guest-list-btn__container">
