@@ -53,6 +53,7 @@ const Table = () => {
         {guestList.map((guest) => {
           return (
             <tr
+              title="Edit guest information and press button - Update"
               className="guest-table-content__container"
               id={guest._id}
               key={guest._id}
@@ -90,7 +91,7 @@ const Table = () => {
                   Delete
                 </button>
                 <button className={guest._id} onClick={updateGuest}>
-                  Edit
+                  Update
                 </button>
               </td>
             </tr>
