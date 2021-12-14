@@ -3,9 +3,6 @@ Run the app:
 Clone the app:
 https://github.com/misliachto/CA-Final-App.git
 
-To install all dependencie srun:
-npm install
-
 In order to run the APP you have to run backend and front end, these are the steps:
 
 --- RUNNING BACKEND
